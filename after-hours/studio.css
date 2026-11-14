@@ -1,0 +1,22 @@
+.ah-studio-local-note { color: var(--ah-muted); font-size: 17px; margin: -13px 0 25px; }
+.ah-studio-subheading { margin: 35px 0 18px; color: var(--ah-moss); font-size: 31px; }
+.ah-studio-photo-row { border-left: 2px solid var(--ah-sage); padding-left: 22px; margin-bottom: 20px; }
+.ah-studio-photo-row .ah-editor-actions { margin-top: 12px; }
+.ah-studio-publish-title { margin: 0; color: var(--ah-moss); font-size: clamp(40px, 5vw, 64px); line-height: 1.05; letter-spacing: -.035em; }
+.ah-publication { max-width: 900px; }
+.ah-publication .ah-lead { margin-bottom: 28px; }
+.ah-publication-changes { list-style: none; padding: 0; margin: 25px 0; }
+.ah-publication-changes li { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 13px 22px; border-top: 1px solid var(--ah-line); padding: 17px 0; }
+.ah-publication-changes li:last-child { border-bottom: 1px solid var(--ah-line); }
+.ah-publication-changes button { font-size: 18px; min-height: 40px; padding: 8px 15px; }
+.ah-publication-steps { margin: 32px 0; padding: 28px; background: var(--ah-paper-light); border: 1px solid var(--ah-line); }
+.ah-publication-steps h3 { font-size: 34px; color: var(--ah-moss); margin: 0 0 17px; }
+.ah-publication-steps ol { padding-left: 25px; }
+.ah-publication-steps li { padding-left: 5px; margin-bottom: 13px; }
+.ah-publication-steps summary { color: var(--ah-moss); text-decoration: underline; text-underline-offset: .18em; margin-bottom: 20px; }
+.ah-publication-steps textarea { font-size: 16px; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .ah-publication-steps { padding: 20px; }
+  .ah-studio-tabs { gap: 4px 14px; }
+  .ah-studio-tabs button { font-size: 18px; }
+}

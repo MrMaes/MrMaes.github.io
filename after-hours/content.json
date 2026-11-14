@@ -1,0 +1,73 @@
+{
+  "format": "after-hours-journal",
+  "version": 2,
+  "settings": {
+    "title": "After Hours",
+    "tagline": "Rides, small projects & ordinary good days.",
+    "about": "A personal journal for the things worth keeping: time on two wheels, a project taking shape, something learned, and the pleasure of an ordinary day. A few photographs and a few honest words are enough.",
+    "garageIntro": "An ongoing record of the bike and the choices behind it. The setup below is the starting point; new build notes will collect what changes along the way.",
+    "bikeName": "2021 Yamaha MT-03",
+    "garageSections": [
+      {
+        "title": "Exhaust & fueling",
+        "items": [
+          "Akrapovič full exhaust",
+          "Rapid Bike EVO"
+        ]
+      },
+      {
+        "title": "Drive & controls",
+        "items": [
+          "14/46 gearing",
+          "TST quick throttle"
+        ]
+      },
+      {
+        "title": "Comfort & protection",
+        "items": [
+          "Saddlemen seat",
+          "Shogun sliders"
+        ]
+      }
+    ],
+    "nowIntro": "A little space for whatever has my attention. Riding, climbing, making things, and enjoying the small details along the way.",
+    "nowItems": [
+      {
+        "label": "On two wheels",
+        "text": "The MT-03, its next chapter, and the small choices that make a bike feel personal."
+      },
+      {
+        "label": "On the wall",
+        "text": "Bouldering, working through moves, and making room for a different kind of challenge."
+      },
+      {
+        "label": "Everyday pleasures",
+        "text": "Coffee, books, and ordinary good days worth remembering."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "opening-the-notebook",
+      "title": "Opening the notebook",
+      "body": "This is the beginning of After Hours: a place to collect rides, projects, interests, and days worth remembering.\n\nThe idea is simple. Keep a few photographs. Write down what mattered. Let the small things have a place alongside the bigger ones.\n\nThe garage will follow the MT-03 as it changes. The journal has room for everything else.",
+      "category": "Life",
+      "date": "2026-11-14",
+      "status": "published",
+      "photos": [],
+      "createdAt": "2026-11-14T16:09:18.000Z",
+      "updatedAt": "2026-11-14T16:09:18.000Z"
+    },
+    {
+      "id": "the-mt-03-so-far",
+      "title": "The MT-03, so far",
+      "body": "The starting point is a 2021 Yamaha MT-03. Its setup includes an Akrapovič full exhaust, Rapid Bike EVO, 14/46 gearing, a TST quick throttle, a Saddlemen seat, and Shogun sliders.\n\nThis is the first page of the build record. Future notes can hold the reasons behind a change, the work involved, and the impressions that come afterward.\n\nThe current setup lives in the garage, with the story of each change collected here.",
+      "category": "Garage",
+      "date": "2026-11-14",
+      "status": "published",
+      "photos": [],
+      "createdAt": "2026-11-14T16:09:18.000Z",
+      "updatedAt": "2026-11-14T16:09:18.000Z"
+    }
+  ]
+}
