@@ -37,27 +37,54 @@ export function photoUrl(value) {
   return '';
 }
 
-export async function loadPublicData() {
-  const response = await fetch(`${BASE}content.json`, {cache: 'no-store'});
-  if (!response.ok) throw new Error('The notebook could not be loaded. Please try again in a moment.');
-  const data = await response.json();
-  if (!data || data.format !== 'after-hours-journal' || !data.settings || !Array.isArray(data.entries)) {
+export function normalizeJournalData(data) {
+  if (!data || data.format !== 'after-hours-journal' || !data.settings || (data.entries != null && !Array.isArray(data.entries))) {
     throw new Error('The notebook file needs a small repair. Its saved content has not been changed.');
   }
-  if (typeof data.settings.title !== 'string' || !Array.isArray(data.settings.garageSections) || !Array.isArray(data.settings.nowItems)) {
+  // The CMS omits empty fields when saving. Empty content remains empty; never restore starter text.
+  const settings = {
+    ...data.settings,
+    tagline: data.settings.tagline ?? '',
+    about: data.settings.about ?? '',
+    bikeName: data.settings.bikeName ?? '',
+    garageIntro: data.settings.garageIntro ?? '',
+    nowIntro: data.settings.nowIntro ?? '',
+    garageSections: data.settings.garageSections ?? [],
+    nowItems: data.settings.nowItems ?? [],
+  };
+  if (typeof settings.title !== 'string' || !Array.isArray(settings.garageSections) || !Array.isArray(settings.nowItems) ||
+    settings.garageSections.some(section => !section || typeof section.title !== 'string' || (section.items != null && !Array.isArray(section.items))) ||
+    settings.nowItems.some(item => !item || typeof item.label !== 'string' || (item.text != null && typeof item.text !== 'string'))) {
     throw new Error('The journal details could not be read. Please check content.json.');
   }
-  const entries = data.entries.filter(entry => entry && entry.status === 'published');
+  settings.garageSections = settings.garageSections.map(section => ({...section, items: section.items ?? []}));
+  settings.nowItems = settings.nowItems.map(item => ({...item, text: item.text ?? ''}));
+  const entries = (data.entries ?? []).filter(entry => entry && entry.status === 'published').map(entry => ({
+    ...entry,
+    // Older entries keep their original links. The visual editor creates a stable UUID for new notes.
+    id: entry.id || entry.key,
+    body: entry.body ?? '',
+    photos: entry.photos ?? [],
+    createdAt: entry.createdAt || `${entry.date}T12:00:00Z`,
+    updatedAt: entry.updatedAt || entry.createdAt || `${entry.date}T12:00:00Z`,
+  }));
   const ids = new Set();
   for (const entry of entries) {
     if (typeof entry.id !== 'string' || !entry.id || ids.has(entry.id) ||
       typeof entry.title !== 'string' || typeof entry.body !== 'string' ||
-      !['Life', 'Garage', 'Pursuits'].includes(entry.category) || !dateLabel(entry.date) || !Array.isArray(entry.photos)) {
+      !['Life', 'Garage', 'Pursuits'].includes(entry.category) || !dateLabel(entry.date) || !Array.isArray(entry.photos) ||
+      entry.photos.some(photo => !photo || typeof photo.url !== 'string' || (photo.alt != null && typeof photo.alt !== 'string'))) {
       throw new Error('One of the journal entries could not be read. Please check content.json.');
     }
     ids.add(entry.id);
   }
-  return {...data, entries};
+  return {...data, settings, entries};
+}
+
+export async function loadPublicData() {
+  const response = await fetch(`${BASE}content.json`, {cache: 'no-store'});
+  if (!response.ok) throw new Error('The notebook could not be loaded. Please try again in a moment.');
+  return normalizeJournalData(await response.json());
 }
 
 export function renderArticle(entry) {

@@ -1,0 +1,184 @@
+# After Hours visual editor. Existing site content stays in after-hours/content.json.
+# GitHub App access is repository-wide; these forms only configure the hobby journal.
+media:
+  input: after-hours/photos
+  output: /after-hours/photos
+  rename: random
+  extensions: [jpg, jpeg, png, webp, gif, avif]
+
+settings:
+  content:
+    merge: true
+  commit:
+    templates:
+      create: "Add {filename} to After Hours"
+      update: "Update After Hours {name}"
+      delete: "Remove {filename} from After Hours"
+
+content:
+  - name: journal
+    label: Journal entries
+    type: file
+    path: after-hours/content.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: entries
+        label: Your notebook
+        type: object
+        description: "Open a note to edit it, or add a new one. Saving publishes your changes."
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title} · {date}"
+        fields:
+          - name: id
+            type: string
+            hidden: true
+          - name: key
+            type: uuid
+            hidden: true
+            options:
+              editable: false
+              generate: false
+          - name: status
+            type: string
+            hidden: true
+            default: published
+          - name: title
+            label: Title
+            type: string
+            required: true
+            options:
+              maxlength: 160
+          - name: date
+            label: Date
+            type: date
+            required: true
+            options:
+              time: false
+              format: yyyy-MM-dd
+          - name: category
+            label: Filed under
+            type: select
+            required: true
+            default: Life
+            options:
+              values: [Life, Garage, Pursuits]
+          - name: body
+            label: What do you want to remember?
+            type: text
+            default: ""
+            description: "A few words are enough. Leave a blank line between paragraphs."
+            options:
+              maxlength: 50000
+          - name: photos
+            label: Photographs
+            type: object
+            list:
+              max: 10
+              collapsible:
+                collapsed: false
+                summary: "Photograph {index}"
+            fields:
+              - name: id
+                type: string
+                hidden: true
+              - name: url
+                label: Photograph
+                type: image
+                required: true
+              - name: alt
+                label: Caption and image description
+                type: string
+                default: ""
+                options:
+                  maxlength: 1000
+          - name: createdAt
+            type: string
+            hidden: true
+          - name: updatedAt
+            type: string
+            hidden: true
+
+  - name: details
+    label: Journal details, Garage & Now
+    type: file
+    path: after-hours/content.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: settings
+        label: Make it your own
+        type: object
+        fields:
+          - name: title
+            label: Journal name
+            type: string
+            required: true
+            options:
+              maxlength: 80
+          - name: tagline
+            label: Short introduction
+            type: text
+            options:
+              maxlength: 180
+          - name: about
+            label: The note in the margin
+            type: text
+            options:
+              maxlength: 10000
+          - name: bikeName
+            label: Bike name
+            type: string
+            options:
+              maxlength: 100
+          - name: garageIntro
+            label: Garage introduction
+            type: text
+            options:
+              maxlength: 6000
+          - name: garageSections
+            label: Bike modifications and setup
+            type: object
+            list:
+              max: 12
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - name: title
+                label: Section name
+                type: string
+                required: true
+              - name: items
+                label: Parts and notes
+                type: string
+                list: true
+          - name: nowIntro
+            label: Now page introduction
+            type: text
+            options:
+              maxlength: 6000
+          - name: nowItems
+            label: What has your attention?
+            type: object
+            list:
+              max: 12
+              collapsible:
+                collapsed: true
+                summary: "{label}"
+            fields:
+              - name: label
+                label: Interest
+                type: string
+                required: true
+                options:
+                  maxlength: 80
+              - name: text
+                label: A few words
+                type: text
+                options:
+                  maxlength: 3000

@@ -1,22 +1,52 @@
-.ah-studio-local-note { color: var(--ah-muted); font-size: 17px; margin: -13px 0 25px; }
-.ah-studio-subheading { margin: 35px 0 18px; color: var(--ah-moss); font-size: 31px; }
-.ah-studio-photo-row { border-left: 2px solid var(--ah-sage); padding-left: 22px; margin-bottom: 20px; }
-.ah-studio-photo-row .ah-editor-actions { margin-top: 12px; }
-.ah-studio-publish-title { margin: 0; color: var(--ah-moss); font-size: clamp(40px, 5vw, 64px); line-height: 1.05; letter-spacing: -.035em; }
-.ah-publication { max-width: 900px; }
-.ah-publication .ah-lead { margin-bottom: 28px; }
-.ah-publication-changes { list-style: none; padding: 0; margin: 25px 0; }
-.ah-publication-changes li { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 13px 22px; border-top: 1px solid var(--ah-line); padding: 17px 0; }
-.ah-publication-changes li:last-child { border-bottom: 1px solid var(--ah-line); }
-.ah-publication-changes button { font-size: 18px; min-height: 40px; padding: 8px 15px; }
-.ah-publication-steps { margin: 32px 0; padding: 28px; background: var(--ah-paper-light); border: 1px solid var(--ah-line); }
-.ah-publication-steps h3 { font-size: 34px; color: var(--ah-moss); margin: 0 0 17px; }
-.ah-publication-steps ol { padding-left: 25px; }
-.ah-publication-steps li { padding-left: 5px; margin-bottom: 13px; }
-.ah-publication-steps summary { color: var(--ah-moss); text-decoration: underline; text-underline-offset: .18em; margin-bottom: 20px; }
-.ah-publication-steps textarea { font-size: 16px; overflow-wrap: anywhere; }
-@media (max-width: 600px) {
-  .ah-publication-steps { padding: 20px; }
-  .ah-studio-tabs { gap: 4px 14px; }
-  .ah-studio-tabs button { font-size: 18px; }
+.ah-desk-invitation { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr); gap: 36px 65px; margin: 10px 0 45px; padding: 38px 42px 34px; background: var(--ah-sage-pale); border-top: 4px solid #a4b18c; }
+.ah-desk-invitation-copy h2 { color: var(--ah-moss); margin: 0 0 22px; font-size: clamp(45px, 5.2vw, 73px); line-height: .98; letter-spacing: -.035em; }
+.ah-desk-invitation-copy > p:not(.ah-section-label):not(.ah-help) { max-width: 44ch; font-size: 23px; line-height: 1.45; margin-bottom: 25px; }
+.ah-open-editor { gap: 20px; padding: 13px 23px 15px; font-size: 22px; }
+.ah-editor-byline { margin: 12px 0 0; font-size: 16px; }
+.ah-desk-side-note { align-self: center; border-left: 1px solid #a9b597; padding-left: 28px; }
+.ah-desk-side-note > .ah-section-label { margin-bottom: 24px; }
+.ah-desk-side-note ol { list-style: none; padding: 0; margin: 0; }
+.ah-desk-side-note li { display: flex; gap: 16px; margin-bottom: 23px; }
+.ah-desk-side-note li:last-child { margin-bottom: 0; }
+.ah-desk-side-note li > span { font-size: 16px; color: var(--ah-moss-light); padding-top: 4px; }
+.ah-desk-side-note h3 { font-size: 28px; line-height: 1.15; margin: 0 0 7px; }
+.ah-desk-side-note p { font-size: 18px; color: var(--ah-muted); line-height: 1.4; margin: 0; }
+.ah-desk-sections { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin: 0 0 36px; }
+.ah-desk-sections > a { display: block; border-top: 1px solid var(--ah-line); padding: 23px 0 0; text-decoration: none; }
+.ah-desk-sections .ah-section-label { font-size: 11px; margin-bottom: 17px; }
+.ah-desk-sections h2 { display: flex; justify-content: space-between; gap: 12px; font-size: 29px; line-height: 1.15; margin: 0 0 13px; color: var(--ah-moss); }
+.ah-desk-sections h2 span { font-size: 23px; }
+.ah-desk-sections p { color: var(--ah-muted); font-size: 19px; line-height: 1.4; margin-bottom: 0; }
+.ah-desk-sections a:hover h2 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .15em; }
+.ah-desk-connection { border-top: 1px solid var(--ah-line); border-bottom: 1px solid var(--ah-line); margin: 36px 0; }
+.ah-desk-connection > summary { padding: 19px 0; color: var(--ah-moss); font-size: 22px; }
+.ah-desk-connection > div { padding: 0 0 15px; max-width: 76ch; }
+.ah-desk-connection ol { padding-left: 26px; margin-top: 0; font-size: 20px; }
+.ah-desk-connection li { padding-left: 5px; margin-bottom: 11px; }
+.ah-desk-connection .ah-help { font-size: 17px; }
+.ah-earlier-drafts { margin-top: 42px; }
+.ah-earlier-drafts h2 { color: var(--ah-moss); font-size: 34px; line-height: 1.15; margin: 0; }
+.ah-earlier-drafts .ah-section-line { align-items: end; }
+.ah-earlier-drafts .ah-section-label { margin-bottom: 12px; }
+.ah-saved-draft { border-top: 1px solid var(--ah-line); }
+.ah-saved-draft:last-of-type { border-bottom: 1px solid var(--ah-line); margin-bottom: 18px; }
+.ah-saved-draft > summary { padding: 19px 0; font-size: 25px; line-height: 1.25; color: var(--ah-moss); overflow-wrap: anywhere; }
+.ah-saved-draft > summary small { display: block; padding: 5px 0 0 20px; font-size: 16px; color: var(--ah-muted); }
+.ah-saved-draft-body { max-width: 800px; padding: 10px 0 25px; }
+.ah-saved-draft textarea { min-height: 220px; font-size: 19px; }
+@media (max-width: 1000px) {
+  .ah-desk-invitation { gap: 30px; padding: 30px; }
+  .ah-desk-sections { gap: 24px; }
+  .ah-desk-sections h2 { font-size: 26px; }
+}
+@media (max-width: 700px) {
+  .ah-desk-invitation { grid-template-columns: minmax(0, 1fr); padding: 27px 24px; margin-bottom: 32px; }
+  .ah-desk-invitation-copy > p:not(.ah-section-label):not(.ah-help) { font-size: 21px; }
+  .ah-desk-side-note { border-left: 0; border-top: 1px solid #a9b597; padding: 24px 0 0; }
+  .ah-desk-side-note > .ah-section-label { margin-bottom: 20px; }
+  .ah-desk-sections { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .ah-desk-sections h2 { font-size: 29px; }
+  .ah-desk-sections p { max-width: 55ch; }
+  .ah-desk-connection > summary { font-size: 21px; }
+  .ah-earlier-drafts .ah-section-line { gap: 20px; }
 }
