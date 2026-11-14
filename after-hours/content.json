@@ -5,7 +5,7 @@
     "title": "After Hours",
     "tagline": "Rides, small projects & ordinary good days.",
     "about": "A personal journal for the things worth keeping: time on two wheels, a project taking shape, something learned, and the pleasure of an ordinary day. A few photographs and a few honest words are enough.",
-    "garageIntro": "An ongoing record of the bike and the choices behind it. The setup below is the starting point; new build notes will collect what changes along the way.",
+    "garageIntro": "An ongoing record of the bike and the choices behind it.",
     "bikeName": "2021 Yamaha MT-03",
     "garageSections": [
       {
@@ -30,11 +30,11 @@
         ]
       }
     ],
-    "nowIntro": "A little space for whatever has my attention. Riding, climbing, making things, and enjoying the small details along the way.",
+    "nowIntro": "A little space for whatever has my attention. Riding, climbing, making things, being a dad.",
     "nowItems": [
       {
         "label": "On two wheels",
-        "text": "The MT-03, its next chapter, and the small choices that make a bike feel personal."
+        "text": "My custom MT-03 high-rev streetfighter"
       },
       {
         "label": "On the wall",
@@ -42,7 +42,7 @@
       },
       {
         "label": "Everyday pleasures",
-        "text": "Coffee, books, and ordinary good days worth remembering."
+        "text": "Coffee, books, and ordinary good days."
       }
     ]
   },
