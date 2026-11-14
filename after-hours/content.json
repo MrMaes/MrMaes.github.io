@@ -49,23 +49,23 @@
   "entries": [
     {
       "id": "opening-the-notebook",
-      "title": "Opening the notebook",
-      "body": "This is the beginning of After Hours: a place to collect rides, projects, interests, and days worth remembering.\n\nThe idea is simple. Keep a few photographs. Write down what mattered. Let the small things have a place alongside the bigger ones.\n\nThe garage will follow the MT-03 as it changes. The journal has room for everything else.",
-      "category": "Life",
-      "date": "2026-11-14",
+      "key": "a3c52450-735d-4e74-8f7e-b5abe13ab30e",
       "status": "published",
-      "photos": [],
+      "title": "Opening the notebook",
+      "date": "2026-11-14",
+      "category": "Life",
+      "body": "This is the beginning of After Hours: a place to collect rides, projects, interests, and days worth remembering.\n\nThe idea is simple. Keep a few photographs. Write down what mattered. Let the small things have a place alongside the bigger ones.\n\nThe garage will follow the MT-03 as it changes. The journal has room for everything else.",
       "createdAt": "2026-11-14T16:09:18.000Z",
       "updatedAt": "2026-11-14T16:09:18.000Z"
     },
     {
       "id": "the-mt-03-so-far",
-      "title": "The MT-03, so far",
-      "body": "The starting point is a 2021 Yamaha MT-03. Its setup includes an Akrapovič full exhaust, Rapid Bike EVO, 14/46 gearing, a TST quick throttle, a Saddlemen seat, and Shogun sliders.\n\nThis is the first page of the build record. Future notes can hold the reasons behind a change, the work involved, and the impressions that come afterward.\n\nThe current setup lives in the garage, with the story of each change collected here.",
-      "category": "Garage",
-      "date": "2026-11-14",
+      "key": "d4cfc365-accf-4672-ac6f-ed1865a024be",
       "status": "published",
-      "photos": [],
+      "title": "The MT-03, so far",
+      "date": "2026-11-14",
+      "category": "Garage",
+      "body": "I was really inspired by small cc inline fours, like the honda cbr250rr—the Japanese bikes of the 80s and 90s that skirted inspection laws by working with smaller motors and, in effect, forged them into the perfect street racing machines. High RPMs that you can feasibly hit while going the speed limit, you know? But those bikes were never as expensive as an inline four is today, so I had to pivot. Anyway, I wanted something I could build out.\n\nI went with a 2021 Yamaha MT-03 as my shell, mostly because I love Yamaha, and I love street fighters. I replaced the velocity stacks with racing ones, added a high-flow air filter, put a full high-performance exhaust on. I through on a Rapidbike EVO, and suddenly I could track my ECUs responses to more air and more fuel to see how the adaptive piggyback was maximizing power in the 10-12k rev range. \n\nIt’s unparalleled riding a zippy bike as hard as it can go, whether you’re going 10mph or 60. It feels like taking reality on its own terms and finding the edge limitation. Buy the ticket, take the ride, right?",
       "createdAt": "2026-11-14T16:09:18.000Z",
       "updatedAt": "2026-11-14T16:09:18.000Z"
     }
